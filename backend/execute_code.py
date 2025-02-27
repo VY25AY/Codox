@@ -1,10 +1,13 @@
 import requests
 import json
 from constants import LANGUAGE_VERSIONS
+from config import config
+
+Piston_URL = config.get('Piston_URL')
+url = f'{Piston_URL}/execute'
 
 
-def execute_code(code, language, stdinput):
-    url = "https://emkc.org/api/v2/piston"
+def execute_code(code, language, stdinput=""):
 
     json_data = {
         "language": language,
@@ -18,7 +21,7 @@ def execute_code(code, language, stdinput):
         "run_memory_limit": 104857600
     }
 
-    response = requests.post(f'{url}/execute', data=json.dumps(json_data), headers={
+    response = requests.post(url=url, data=json.dumps(json_data), headers={
         "Content-Type": "application/json"
     })
 
