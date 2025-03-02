@@ -1,174 +1,135 @@
 # Codox - Intelligent IDE
 
-The Codox - Intelligent IDE is an AI-powered integrated development environment designed to enhance developer productivity by automating key aspects of the software development lifecycle. It includes features such as automated code generation, test generation, and AI-driven debugging.
+## Overview
+Codox is a lightweight, AI-assisted code editor designed to empower developers with real-time multi-user collaboration and advanced AI-driven features. Built with a secure and intuitive workspace, Codox not only supports live code editing and file management but also enhances productivity with AI-powered linting, auto-completion, documentation generation, and syntax correction.
 
-## Demo
+## Problem Statement
+Modern software development demands rapid collaboration and high-quality code. Developers need tools that:
+- **Enable real-time editing**: Multiple users can work simultaneously without conflicts.
+- **Provide intelligent code suggestions and error corrections**: Minimize bugs and speed up coding.
+- **Ensure organized workspace management**: Support both private and public workspaces with clear file/folder hierarchies.
+- **Automatically synchronize code, files, and user interactions**: Eliminate manual saving and reduce merge conflicts.
 
+Codox meets these needs by integrating advanced AI capabilities with robust real-time collaboration, empowering teams to write, review, and maintain high-quality code efficiently.
 
-## Key Features
+## Solution Architecture
+### Core Infrastructure
+#### Authentication & Database
+**Firebase Authentication & Realtime Database:**
+- **Sign-Up/Login**: Users can register using Google or email with OTP verification.
+- **Password Management**: Secure options for password reset and change.
+- **Realtime Sync**: All code, files, and collaboration events are synchronized instantly using Firebase's Realtime Database and snapshot listeners.
 
-- **Automated Code Generation**: AI-powered code completion and snippet generation.
-- **Automated Test Creation**: AI-driven test case generation and edge case identification.
-- **AI-Driven Debugging**: Real-time code analysis and automated bug fixes.
-- **Multi-Language Support**: Supports Java, Python, C++, JavaScript, and TypeScript.
+#### AI Integration
+**Google Gemini API:**
+- **AI-Powered Suggestions**: Offers smart code completions and linting.
+- **Auto-Documentation**: Automatically generates documentation comments.
+- **Code Correction**: Detects syntax errors and suggests fixes.
 
-## Future Enhancements:
+**AI Chatbot:**
+- Allows users to ask coding-related questions and receive interactive assistance.
 
-- Peer-to-peer collaboration.
-- User authentication and role-based access control.
-- Built-in coding challenges and AI-driven optimizations.
+### Code Editor & UI
+**Monaco Editor:**
+- Supports multiple programming languages with customizable themes and syntax highlighting.
+- File Management: Users can create, rename, delete, and drag-and-drop reorder files and folders in real-time.
 
-## Technologies Used
+**Collaborative Features:**
+- **Live Cursor Tracking**: Displays each collaborator's cursor and avatar.
+- **Chat Integration**: Provides in-workspace chat for real-time communication.
+- **Workspace Invitations**: Users can invite others to join public workspaces.
 
-### Backend
+## Tech Stack
+| Component       | Technology                        |
+|---------------|---------------------------------|
+| Frontend      | Next.js 15, Shadcn UI, Tailwind CSS |
+| Code Editor   | Monaco Editor                    |
+| Realtime Backend | Firebase Realtime Database & Firestore |
+| AI Services   | Google Gemini API                |
+| Authentication | Firebase Authentication (Google & Email/OTP) |
+| Language      | JavaScript                        |
 
-- Python3
-- Dotenv
-- FastAPI
-- Gemini API
-- Piston API
+## Implementation Details
+### Authentication & User Management
+- **Google OAuth & Email/OTP**: Users can register via Google or email with OTP verification.
+- **Password Management**: Supports password reset and updates.
 
-### Frontend
+### Real-Time Collaboration
+- **Live Synchronization**: Firebase Realtime Database syncs all changes instantly.
+- **Collaborative Workspace**: Invitations, notifications, and live updates for all changes.
+- **Autosave Feature**: All edits are automatically saved to Firebase.
 
-- React.js
-- Tailwind CSS
-- Chakra UI
-- Monaco Editor
-- Axios
+### Code Editor Features
+- **Monaco Editor Integration**: Multi-language support, syntax highlighting, and customizable UI.
+- **File Navigation Panel**: Recursive rendering for nested directories, real-time updates.
 
-## Endpoints
+### AI-Driven Enhancements
+- **Code Suggestions & Linting**: Smart completions and error detection.
+- **Auto-Documentation & Code Correction**: AI-generated documentation and real-time syntax fixes.
+- **AI Chatbot**: Embedded chatbot for coding assistance and brainstorming.
 
-### Backend
+## Setting up the Project
+### Clone the GitHub Repository
+```bash
+git clone https://github.com/VY25AY/Codox.git
+```
 
-1. **Generate Code** (`POST /generate-code/`)
+### Open the Project Directory
+```bash
+cd Codox
+```
 
-   - Sample Request:
+## Setting up the Backend
+### Prerequisites
+Ensure Python is installed.
 
-     ```json
-     { "prompt": "Write a Python function to reverse a string." }
-     ```
-
-   - Sample Response:
-     ```json
-     { "generated_code": "def reverse_string(s): return s[::-1]" }
-     ```
-
-2. **Run Code** (`POST /run-code/`)
-
-   - Sample Request:
-
-     ````json
-     {
-       "language": "java",
-       "code": "```java\npublic class Factorial {\n\n    public static void main(String[] args) {\n        int number = 5; // You can change this number to calculate the factorial of a different number\n        long factorial = calculateFactorial(number);\n        System.out.println(\"Factorial of \" + number + \" = \" + factorial);\n    }\n\n    public static long calculateFactorial(int n) {\n        if (n == 0) {\n            return 1;\n        } else {\n            return n * calculateFactorial(n - 1);\n        }\n    }\n}\n```\n",
-       "stdinput": ""
-     }
-     ````
-
-   - Sample Response:
-     ```json
-     { "result": "Factorial of 5 is: 120" }
-     ```
-
-### Frontend
-
-1. `/` - Home page with the main code editor.
-2. `/debug/` - Debugging page with step-by-step execution controls.
-
-## Impact
-
-- **Increased Developer Productivity**: Automates repetitive tasks, enabling focus on problem-solving.
-- **Improved Code Quality**: AI-powered analysis reduces errors and enhances maintainability.
-- **Reduced Operational Costs**: Automation lowers debugging, testing, and integration efforts.
-- **Enhanced Collaboration**: AI-generated documentation and standardized practices improve teamwork.
-- **Future-Proofing**: Adaptable to modern cloud-based development.
-
-## Setting up the project:
-
-1. Clone the github repository
-
-   ```bash
-   git clone https://github.com/VY25AY/Codox.git
-   ```
-
-2. Open the project directory
-
-   ```bash
-   cd Codox
-   ```
-
-3. Set up the Backend and Frontend
-
-### Setting up the backend
-
-Make sure you have Python or later installed.
-
-1. Open backend directory:
-
+### Steps
+1. Open the backend directory:
    ```bash
    cd backend
    ```
-
 2. Set up a virtual environment:
-
    ```bash
    python -m venv .venv
    ```
-
 3. Activate the virtual environment:
-
-   - For Linux/Mac:
-
+   - **For Linux/Mac:**
      ```bash
      source .venv/bin/activate
      ```
-
-   - For Windows:
-
+   - **For Windows:**
      ```bash
      .\.venv\Scripts\activate
      ```
-
-4. Install the required packages:
-
+4. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-
 5. Start the backend server:
-
    ```bash
    uvicorn main:app --reload
    ```
+   Backend server runs on [http://localhost:8000](http://localhost:8000).
 
-6. Backend server is now running on http://localhost:8000.
+## Setting up the Frontend
+### Prerequisites
+Ensure Node.js is installed.
 
-### Setting up the Frontend
-
-Make sure you have Node.js installed.
-
-1. Open frontend directory:
-
+### Steps
+1. Open the frontend directory:
    ```bash
    cd frontend
    ```
-
 2. Install dependencies:
-
    ```bash
    npm install
    ```
-
 3. Start the frontend server:
-
    ```bash
    npm start
    ```
-
-4. The frontend will be running on http://localhost:5173.
+   Frontend runs on [http://localhost:5173](http://localhost:5173).
 
 ## Usage
+Open [http://localhost:5173](http://localhost:5173) in your web browser.
 
-1. Open your web browser.
-
-2. Go to this URL: http://localhost:5173.
