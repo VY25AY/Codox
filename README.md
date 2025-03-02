@@ -12,6 +12,12 @@ Modern software development demands rapid collaboration and high-quality code. D
 
 Codox meets these needs by integrating advanced AI capabilities with robust real-time collaboration, empowering teams to write, review, and maintain high-quality code efficiently.
 
+## Demo
+
+![1](https://github.com/user-attachments/assets/1e8c2362-98da-4bf7-9dd4-34cce0c42913)
+![2](https://github.com/user-attachments/assets/a5218704-3b79-49c5-90f5-b0b94befb796)
+![3](https://github.com/user-attachments/assets/88841604-6297-41b0-a1dc-2c246b9adb75)
+
 ## Solution Architecture
 ### Core Infrastructure
 #### Authentication & Database
