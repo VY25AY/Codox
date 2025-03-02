@@ -86,57 +86,5 @@ git clone https://github.com/VY25AY/Codox.git
 cd Codox
 ```
 
-## Setting up the Backend
-### Prerequisites
-Ensure Python is installed.
 
-### Steps
-1. Open the backend directory:
-   ```bash
-   cd backend
-   ```
-2. Set up a virtual environment:
-   ```bash
-   python -m venv .venv
-   ```
-3. Activate the virtual environment:
-   - **For Linux/Mac:**
-     ```bash
-     source .venv/bin/activate
-     ```
-   - **For Windows:**
-     ```bash
-     .\.venv\Scripts\activate
-     ```
-4. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-5. Start the backend server:
-   ```bash
-   uvicorn main:app --reload
-   ```
-   Backend server runs on [http://localhost:8000](http://localhost:8000).
-
-## Setting up the Frontend
-### Prerequisites
-Ensure Node.js is installed.
-
-### Steps
-1. Open the frontend directory:
-   ```bash
-   cd frontend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the frontend server:
-   ```bash
-   npm start
-   ```
-   Frontend runs on [http://localhost:5173](http://localhost:5173).
-
-## Usage
-Open [http://localhost:5173](http://localhost:5173) in your web browser.
-
+ 
