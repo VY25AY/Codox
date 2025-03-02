@@ -86,5 +86,44 @@ git clone https://github.com/VY25AY/Codox.git
 cd Codox
 ```
 
+## Install Dependencies
+
+```sh
+npm install
+```
+
+---
+
+## Set up Environment Variables
+
+Create a `.env.local` file in the project root directory and add the following:
+
+```env
+NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_firebase_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_firebase_app_id
+NEXT_PUBLIC_GEMINI_API_KEY=your_google_gemini_api_key
+```
+
+Replace the placeholders with your actual credentials.
+
+---
+
+## Running the Application
+
+```sh
+npm run dev
+```
+
+The application will run on `http://localhost:3000` by default.
+
+Now, open `http://localhost:3000` in your browser to start using **Codox**. 🚀
+
+---
+
+
 
  
