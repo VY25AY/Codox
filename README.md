@@ -1,8 +1,8 @@
 # Codox - Intelligent IDE
-
+---
 ## Overview
 Codox is a lightweight, AI-assisted code editor designed to empower developers with real-time multi-user collaboration and advanced AI-driven features. Built with a secure and intuitive workspace, Codox not only supports live code editing and file management but also enhances productivity with AI-powered linting, auto-completion, documentation generation, and syntax correction.
-
+---
 ## Problem Statement
 Modern software development demands rapid collaboration and high-quality code. Developers need tools that:
 - **Enable real-time editing**: Multiple users can work simultaneously without conflicts.
@@ -11,15 +11,16 @@ Modern software development demands rapid collaboration and high-quality code. D
 - **Automatically synchronize code, files, and user interactions**: Eliminate manual saving and reduce merge conflicts.
 
 Codox meets these needs by integrating advanced AI capabilities with robust real-time collaboration, empowering teams to write, review, and maintain high-quality code efficiently.
-
+---
 ## Demo
-
+---
 ![1](https://github.com/user-attachments/assets/1e8c2362-98da-4bf7-9dd4-34cce0c42913)
 ![2](https://github.com/user-attachments/assets/a5218704-3b79-49c5-90f5-b0b94befb796)
 ![3](https://github.com/user-attachments/assets/88841604-6297-41b0-a1dc-2c246b9adb75)
 ![4](https://github.com/user-attachments/assets/dfec646e-33f4-426d-bb96-9068539cee53)
 
 ## Solution Architecture
+---
 ### Core Infrastructure
 #### Authentication & Database
 **Firebase Authentication & Realtime Database:**
@@ -47,6 +48,7 @@ Codox meets these needs by integrating advanced AI capabilities with robust real
 - **Workspace Invitations**: Users can invite others to join public workspaces.
 
 ## Tech Stack
+---
 | Component       | Technology                        |
 |---------------|---------------------------------|
 | Frontend      | Next.js 15, Shadcn UI, Tailwind CSS |
@@ -57,6 +59,7 @@ Codox meets these needs by integrating advanced AI capabilities with robust real
 | Language      | JavaScript                        |
 
 ## Implementation Details
+---
 ### Authentication & User Management
 - **Google OAuth & Email/OTP**: Users can register via Google or email with OTP verification.
 - **Password Management**: Supports password reset and updates.
@@ -87,6 +90,7 @@ cd Codox
 ```
 
 ## Install Dependencies
+---
 
 ```sh
 npm install
@@ -95,6 +99,7 @@ npm install
 ---
 
 ## Set up Environment Variables
+---
 
 Create a `.env.local` file in the project root directory and add the following:
 
@@ -113,6 +118,7 @@ Replace the placeholders with your actual credentials.
 ---
 
 ## Running the Application
+---
 
 ```sh
 npm run dev
