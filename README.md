@@ -4,12 +4,6 @@ The Codox - Intelligent IDE is an AI-powered integrated development environment 
 
 ## Demo
 
-![2](https://github.com/user-attachments/assets/ba5a65e4-48ca-46f4-b96b-4bb511628c96)   ![1](https://github.com/user-attachments/assets/0e1c4fc8-4c41-4884-ac6d-34659cd05f23)
-
-
-
-https://github.com/user-attachments/assets/64ef60f9-ce80-4a79-b898-7c7566888ec9
-
 
 ## Key Features
 
